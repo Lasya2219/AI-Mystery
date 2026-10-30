@@ -1,0 +1,5 @@
+export interface Suspect {id:string;name:string;role:string;motive:string;alibi:string;publicDescription:string}
+export interface Evidence {id:string;type:'chat'|'image'|'cctv'|'document'|'timeline';title:string;description:string;occurredAt?:string;content:{text:string};assetAltText?:string}
+export interface Case {id:string;title:string;summary:string;adaptedPremise:string;difficulty:string;tone:string;generationMode:'gemini'|'demo';incident:{description:string;location:string;occurredAt:string};suspects:Suspect[];evidence:Evidence[];timeline:{id:string;occurredAt:string;description:string;relatedEvidenceIds:string[]}[]}
+export interface Reveal {verdict:'correct'|'incorrect';culprit:{id:string;name:string;role:string};motive:string;explanation:string;revealNarrative:string;reasoningSteps:{claim:string;evidenceIds:string[];evidence:{id:string;title:string}[]}[];redHerringExplanations:{suspectId:string;suspectName:string;explanation:string;evidence:{id:string;title:string}[]}[]}
+export interface Session {caseId:string;playthroughId:string;token:string}
