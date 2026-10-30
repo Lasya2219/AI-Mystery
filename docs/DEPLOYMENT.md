@@ -49,4 +49,4 @@ If you add a custom Vercel domain, add its exact HTTPS origin to `CLIENT_ORIGIN`
 
 ## Deploying with dashboards instead of the Blueprint
 
-Use a Render Node web service with root directory blank, build command `npm ci && npm run build --workspace server`, start command `npm run start --workspace server`, and health-check path `/health`. Add the same environment variables listed above. In Vercel, keep the project root at `.`, install command `npm ci`, build command `npm run build --workspace client`, output directory `client/dist`, and set `VITE_API_BASE_URL` as above.
+Use a Render Node web service with root directory blank, build command `npm ci --include=dev && npm run build --workspace server`, start command `npm run start --workspace server`, and health-check path `/health`. Add the same environment variables listed above. In Vercel, keep the project root at `.`, install command `npm ci --include=dev`, build command `npm run build --workspace client`, output directory `client/dist`, and set `VITE_API_BASE_URL` as above.
