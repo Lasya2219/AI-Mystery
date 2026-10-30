@@ -25,6 +25,10 @@ The client runs at <http://localhost:5173> and the API at <http://localhost:5000
 - `npm run build` — compile the server and production-build the client
 - `npm test` — run server validation tests and build the client
 
+## Deployment
+
+The repository includes a Render Blueprint and Vercel SPA configuration. Follow [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) to connect the GitHub repository, add the production environment variables, and deploy the API and client.
+
 ## Configuration
 
 See `server/.env.example` and `client/.env.example`. `GEMINI_API_KEY` must remain server-side. Change `GEMINI_MODEL` to a model enabled for your API key. The optional image provider is not configured; image evidence is rendered as readable fictional text so no image generation is required to solve the case.

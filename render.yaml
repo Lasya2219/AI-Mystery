@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: ai-mystery-room-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build --workspace server
+    startCommand: npm run start --workspace server
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22.14.0
+      - key: MONGODB_URI
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: CASE_GENERATION_MAX_ATTEMPTS
+        value: "3"
+      - key: CASE_RETENTION_DAYS
+        value: "30"
+      - key: RATE_LIMIT_WINDOW_MS
+        value: "900000"
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: "10"
